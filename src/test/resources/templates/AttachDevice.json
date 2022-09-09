@@ -1,0 +1,23 @@
+{
+    "deviceTemplateList": [
+      {
+        "templateId": {{ templateId }},
+        "device": [
+          {
+            "csv-status": "complete",
+            "csv-deviceId": {{deviceUuid}},
+            "csv-deviceIP": "-",
+            "csv-host-name": "-",
+            "/10/vpn-instance/ip/route/0.0.0.0/0/next-hop/service_vpn_next_hop_ip_address_0/address": {{lanGateway}},
+            "/10/ge0/1/interface/ip/address": {{lanIP}},
+            "/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/vpn_next_hop_ip_address_0/address": {{wanGateway}},
+            "//system/host-name": {{hostname}},
+            "//system/system-ip": {{systemIP}},
+            "//system/site-id": {{siteId}}
+          }
+        ],
+        "isEdited": false,
+        "isMasterEdited": false
+      }
+    ]
+  }

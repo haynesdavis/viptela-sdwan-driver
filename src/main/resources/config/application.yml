@@ -1,0 +1,46 @@
+trust-store:
+    classpath: viptela-cert.p12
+trust-store-password: viptela
+management:
+    endpoints:
+        web:
+            base-path: /management
+            exposure:
+                include: "*"
+    metrics:
+        export:
+            graphite:
+                enabled: false
+            prometheus:
+                enabled: true
+            simple:
+                enabled: false
+
+spring:
+  main:
+    banner-mode: "off"
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    consumer:
+      auto-offset-reset: latest
+      group-id: ${spring.application.name}
+
+
+server:
+  port: 8197
+
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    com.ibm.sdwan: DEBUG
+
+rcdriver:
+  topics:
+    lifecycleResponsesTopic: lm_vnfc_lifecycle_execution_events
+    vManageApiRetryTopic: lm_vmanage_api_retry_requests
+
