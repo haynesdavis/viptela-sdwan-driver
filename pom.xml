@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ibm</groupId>
     <artifactId>viptela-sdwan-driver</artifactId>
-    <version>0.0.1-dev15</version>
+    <version>1.0.0</version>
     <name>viptela-sdwan-driver</name>
     <description>Viptela sdwan driver for CP4NA</description>
     <organization>
