@@ -25,7 +25,7 @@ oc get secret viptela-sdwan-driver-tls -o 'go-template={{index .data "tls.crt"}}
 The following command will onboard the viptela-sdwan-driver into CP4NA environment called 'dev01':
 
 ```bash
-lmctl resourcedriver add --type viptela-sdwan --url http://viptela-sdwan-driver:8197 dev01 --certificate viptela-sdwan-driver-tls.pem
+lmctl resourcedriver add --type viptela-sdwan --url https://viptela-sdwan-driver:8197 dev01 --certificate viptela-sdwan-driver-tls.pem
 ```
 
 **NOTES**:
