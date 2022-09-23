@@ -1,12 +1,15 @@
 package com.ibm.sdwan.viptela.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -54,8 +57,8 @@ public class VManageApiRetryServiceListenerTest {
 		when(objectMapper.readValue("test",KafkaMessage.class)).thenReturn(kafkaMessage);
 		
 		vManageApiRetryServiceListener.listenForVManageApiRetryMessages("test");
-
-	}
+		verify(lifecycleManagementService, times(1)).runLifecycle(null,executionRequest,-1, null);
+	} 
 	
 	@Test
 	@DisplayName("Testing negative scenario for Listener For VManageApi  Status SUCCESS")

@@ -1,5 +1,6 @@
 package com.ibm.sdwan.viptela.utils;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.Duration;
@@ -30,7 +31,8 @@ public class ViptelaUtilsTest {
 		executionRequest.setDeploymentLocation(deploymentLocation);
 		SDWDriverProperties sdwDriverProperties = new SDWDriverProperties();
 		sdwDriverProperties.setvManageApiDelay(Duration.ofSeconds(1));
-		ViptelaUtils.getDelay(sdwDriverProperties, executionRequest);
+		long delay = ViptelaUtils.getDelay(sdwDriverProperties, executionRequest);
+		assertEquals(12*1000, delay);
 	}
 
 	@Test
@@ -44,7 +46,8 @@ public class ViptelaUtilsTest {
 		executionRequest.setDeploymentLocation(deploymentLocation);
 		SDWDriverProperties sdwDriverProperties = new SDWDriverProperties();
 		sdwDriverProperties.setvManageApiDelay(Duration.ofSeconds(1));
-		ViptelaUtils.getDelay(sdwDriverProperties, executionRequest);
+		long delay = ViptelaUtils.getDelay(sdwDriverProperties, executionRequest);
+		assertEquals(1*1000, delay);
 	}
 
 	@Test

@@ -59,14 +59,4 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  		Assertions.assertEquals("type", details.getData().get(0).getDeviceType());
  	}
 
-// 	@Test
-// 	@DisplayName("Testing exception scenario for Extracting Devices From Response")
-// 	public void extractDevicesFromResponseExceptionTest() throws JsonMappingException, JsonProcessingException {
-// 		ReflectionTestUtils.setField(payloadConversionService, "mapper", mapper);
-// 		when(mapper.readValue("test", DeviceDetails.class)).thenThrow(JsonProcessingException.class);
-// 		assertThrows(SdwanResponseException.class, () -> {
-// 			payloadConversionService.extractDevicesFromResponse("test");
-// 		});
-// 	}
-
  }
